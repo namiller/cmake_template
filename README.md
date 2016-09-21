@@ -2,8 +2,8 @@
 
 Here is an example of how I lay out my cmake project to offer flexibility and convenience in testing, library development and functionality demonstration
 
-```
-+-- build/ -- `cd` here and `cmake ..` to avoid poluting workspace.
+<pre>
++-- build/ -- <b>cd</b> here and <b>cmake ..</b> to avoid poluting workspace.
 +-- CMakeLists.txt -- Configure project output location variables and load subprojects
 +-- sub1/ -- a user written library (integer addition)
 |  +-- CMakeLists.txt -- Compile library and copy headers to group loc. (also load test subproject)
@@ -29,4 +29,4 @@ Here is an example of how I lay out my cmake project to offer flexibility and co
 |  +-- CMakeLists.txt -- compile executable and link to the library products
 |  +-- src/ -- source files
 |  |  +-- main.cpp -- entry point for executable product
-```
+</pre>
