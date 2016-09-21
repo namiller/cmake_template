@@ -47,7 +47,7 @@ Clone this repository
 git clone https://github.com/namiller/cmake_template.git
 ```
 ###Demonstration
-```
+```bash
 cd cmake_template
 mkdir build
 cd build
