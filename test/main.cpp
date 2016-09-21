@@ -1,4 +1,5 @@
-#include "../include/second.h"
+#include "sub2/second.h"
+#include "sub1/first.h"
 #include <gtest/gtest.h>
 #include <vector>
 
@@ -9,10 +10,10 @@ TEST(Mult, simple) {
   ASSERT_EQ(-25, second_function(-5,5));
 }
 
-TEST(Mult, group) {
+TEST(Add, group) {
   for (int x = -100; x <= 100; x++) {
     for (int y = -100; y <= 100; y++) {
-      ASSERT_EQ(x*y, second_function(x,y));
+      ASSERT_EQ(x+y, first_function(x,y));
     }
   }
 }

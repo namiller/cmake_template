@@ -11,3 +11,5 @@ file(GLOB SRCS ${PROJECT_SOURCE_DIR}/*.cpp)
 include_directories(${PROJECT_INCLUDE_DIR} ${INCLUDE_OUTPUT_PATH}) #path for dependency includes
 add_library(${PROJECT_NAME} SHARED ${SRCS})
 target_link_libraries(${PROJECT_NAME} sub1)
+
+add_subdirectory(test)
