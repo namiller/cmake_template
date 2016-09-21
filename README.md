@@ -2,6 +2,7 @@
 
 Here is an example of how I lay out my cmake project to offer flexibility and convenience in testing, library development and functionality demonstration
 
+##Layout
 <pre>
 +-- build/                -- <b>cd</b> here and <b>cmake ..</b> to avoid poluting workspace.
 +-- CMakeLists.txt        -- Configure project output location variables and load subprojects
@@ -30,3 +31,20 @@ Here is an example of how I lay out my cmake project to offer flexibility and co
 |  +-- src/               -- source files
 |  |  +-- main.cpp        -- entry point for executable product
 </pre>
+
+##Usage
+###Installation
+Install [GTest](https://github.com/google/googletest) testing suite 
+```bash
+git clone https://github.com/namiller/cmake_template.git
+```
+###Demonstration
+```
+cd cmake_template
+mkdir build
+cd build
+cmake ..
+make
+make test
+```
+
