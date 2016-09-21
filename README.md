@@ -34,7 +34,15 @@ Here is an example of how I lay out my cmake project to offer flexibility and co
 
 ##Usage
 ###Installation
-Install [GTest](https://github.com/google/googletest) testing suite 
+Install [GTest](https://github.com/google/googletest) testing suite
+```bash
+sudo apt-get install libgtest-dev
+cd /usr/src/gtest
+sudo cmake CMakeLists.txt
+sudo make
+sudo cp *.a /usr/lib
+```
+Clone this repository
 ```bash
 git clone https://github.com/namiller/cmake_template.git
 ```
