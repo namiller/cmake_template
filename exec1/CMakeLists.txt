@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.1)
 project (exec1)
 
 SET(PROJECT_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include")

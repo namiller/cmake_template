@@ -1,7 +1,11 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.1)
 project (demo_root) # this project name can be changed but it shouldn't really change much.
 
 enable_testing()
+
+## this is the only CMAKE VERSION 2.6+ feature used so removing it allows back comp.
+set(CMAKE_CXX_STANDARD 14) #use c++14
+#set(CMAKE_CXX_STANDARD 11) #use c++11
 
 # the following variables can be changed to effect the location of the build products.
 set(INCLUDE_OUTPUT_PATH "${PROJECT_BINARY_DIR}/include")

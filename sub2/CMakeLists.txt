@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.1)
 
 get_filename_component(CUR_DIR ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 project(${CUR_DIR}) # set project name to directory name.
