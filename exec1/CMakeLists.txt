@@ -10,7 +10,7 @@ set(SRCS
 
 # here I include the output path so that the code has the correct import paths that a user of the 
 # library would be using (assuming they have the generated include/ folder in their search path.
-include_directories("${INCLUDE_OUTPUT_PATH}")
+include_directories("${GENERATED_INCLUDE_PATH}")
 
 add_executable(${PROJECT_NAME} ${SRCS})
 target_link_libraries(${PROJECT_NAME} sub1 sub2)

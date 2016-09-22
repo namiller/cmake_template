@@ -56,3 +56,9 @@ make
 make test
 ```
 
+##Adaption
+If you would like to use this architecture in your own projects there are a number of locations were changes will need to be made. These have been marked with TODO comments describing the significance of the changes. In general this layout supports projects that have a set of same level library modules with potentially intertwining dependencies, with unit and integration tests as well as executibles that depend on the libraries.
+
+If external dependencies exist, they must also be linked similarly to how GTest is linked in the test files.
+
+An important note is that the references in this example to sub1 and sub2 are references to the project names (as defined by the project(NAME) lines of the cmake files) rather than to the names of the library directories which are only need to match the add_subdirectory(NAME) lines of the top level CMakeLists.txt file. 

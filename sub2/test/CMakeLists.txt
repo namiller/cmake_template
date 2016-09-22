@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.6)
-project(sub2_test)
+project(${PROJECT_UNDER_TEST}_test)
 
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
@@ -8,7 +8,5 @@ set(EXECUTABLE_OUTPUT_PATH "${TEST_OUTPUT_PATH}")
 
 add_executable(${PROJECT_NAME} main.cpp)
 
-message("test for sub2: ${EXECUTABLE_OUTPUT_PATH}/${PROJECT_NAME}")
-
-target_link_libraries(${PROJECT_NAME} ${GTEST_LIBRARIES} pthread sub1 sub2)
-add_test(NAME Test2 COMMAND ${PROJECT_NAME})
+target_link_libraries(${PROJECT_NAME} ${GTEST_LIBRARIES} pthread ${PROJECT_UNDER_TEST})
+add_test(NAME ${PROJECT_UNDER_TEST}_unit COMMAND ${PROJECT_NAME})
