@@ -1,8 +1,9 @@
 cmake_minimum_required(VERSION 3.1)
-project (exec1)
 
-SET(PROJECT_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include")
-SET(PROJECT_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
+get_filename_component(CUR_DIR ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+project(${CUR_DIR}) # set project name to directory name.
+
+set(PROJECT_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 
 set(SRCS
   ${PROJECT_SOURCE_DIR}/main.cpp
@@ -13,4 +14,4 @@ set(SRCS
 include_directories("${GENERATED_INCLUDE_PATH}")
 
 add_executable(${PROJECT_NAME} ${SRCS})
-target_link_libraries(${PROJECT_NAME} sub1 sub2)
+target_link_libraries(${PROJECT_NAME} sub1 sub2) #TODO: sub1, sub2 should be exchanged for the real deps.

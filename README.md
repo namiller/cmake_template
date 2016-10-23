@@ -1,8 +1,8 @@
-#CMAKE project layout
+# CMAKE project layout
 
 Here is an example of how I lay out my cmake project to offer flexibility and convenience in testing, library development and functionality demonstration
 
-##Layout
+## Layout
 <pre>
 +-- build/                -- <b>cd</b> here and <b>cmake ..</b> to avoid poluting workspace.
 +-- CMakeLists.txt        -- Configure project output location variables and load subprojects
@@ -16,6 +16,7 @@ Here is an example of how I lay out my cmake project to offer flexibility and co
 |  |  +-- CMakeLists.txt  -- Locate dependencies (GTest) compile and add test
 |  |  +-- main.cpp        -- test (depends on GTest)
 +-- sub2/                 -- a user written library that depends on sub1 (buggy integer multiplication)
+|  +-- CMakeLists.txt     -- Compile library and copy headers to group loc. (also load test subproject and link to sub1)
 |  +-- src/               -- source files
 |  |  +-- second.cpp      -- library function definition (imports sub1/first.h as expected)
 |  +-- include/           -- header files
@@ -28,12 +29,11 @@ Here is an example of how I lay out my cmake project to offer flexibility and co
 |  +-- main.cpp           -- test everything together
 +-- exec1/                -- contains a demonstrational executable that depends on sub1 and sub2
 |  +-- CMakeLists.txt     -- compile executable and link to the library products
-|  +-- src/               -- source files
-|  |  +-- main.cpp        -- entry point for executable product
+|  +-- main.cpp           -- entry point for executable product
 </pre>
 
-##Usage
-###Installation
+## Usage
+### Installation
 Install [GTest](https://github.com/google/googletest) testing suite
 ```bash
 sudo apt-get install libgtest-dev
@@ -46,7 +46,7 @@ Clone this repository
 ```bash
 git clone https://github.com/namiller/cmake_template.git
 ```
-###Demonstration
+### Demonstration
 ```bash
 cd cmake_template
 mkdir build
@@ -56,7 +56,7 @@ make
 make test
 ```
 
-##Adaption
+## Adaption
 If you would like to use this architecture in your own projects there are a number of locations were changes will need to be made. These have been marked with TODO comments describing the significance of the changes. In general this layout supports projects that have a set of same level library modules with potentially intertwining dependencies, with unit and integration tests as well as executibles that depend on the libraries.
 
 If external dependencies exist, they must also be linked similarly to how GTest is linked in the test files.
